@@ -5,7 +5,7 @@
 //  Created by Oliver Drobnik on 5/20/11.
 //  Copyright 2011 Drobnik.com. All rights reserved.
 //
-
+#import "DTAnimatedGIF.h"
 #import <ImageIO/ImageIO.h>
 #import "DTLazyImageView.h"
 #import "DTLog.h"
@@ -191,7 +191,7 @@ NSString * const DTLazyImageViewDidFinishDownloadNotification = @"DTLazyImageVie
 
 - (void)completeDownloadWithData:(NSData *)data
 {
-	UIImage *image = [[UIImage alloc] initWithData:data];
+	UIImage *image = DTAnimatedGIFFromData(data);//[[UIImage alloc] initWithData:data];
 	
 	self.image = image;
 	_fullWidth = image.size.width;
