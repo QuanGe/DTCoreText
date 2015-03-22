@@ -153,6 +153,11 @@ typedef NS_ENUM(NSUInteger, DTTextAttachmentVerticalAlignment)
 - (void)setDisplaySize:(CGSize)displaySize withMaxDisplaySize:(CGSize)maxDisplaySize;
 
 /**
+ originalSize is seted  by PlaceHolderSize or not
+ */
+-(BOOL)originalSizeSetedByPlaceHolderSize;
+
+/**
  The URL representing the content
  */
 @property (nonatomic, strong) NSURL *contentURL;

@@ -261,6 +261,13 @@ static NSMutableDictionary *_classForTagNameLookup = nil;
 	_displaySize = displaySize;
 }
 
+
+-(BOOL)originalSizeSetedByPlaceHolderSize
+{
+	return CGSizeEqualToSize(_originalSize, _placeHolderImageSize);
+	
+}
+
 - (void)setDisplaySize:(CGSize)displaySize
 {
 	_displaySize = displaySize;
