@@ -25,6 +25,7 @@ NSString * const DTLazyImageViewDidFinishDownloadNotification = @"DTLazyImageVie
 {
 	NSURL *_url;
 	NSString *_placeHolderImageName;
+    UIImage *_placeHolderImage;
 	NSMutableURLRequest *_urlRequest;
 	
 	NSURLConnection *_connection;
@@ -107,6 +108,8 @@ NSString * const DTLazyImageViewDidFinishDownloadNotification = @"DTLazyImageVie
 		}
 		else if(self.placeHolderImageName != nil)
 			self.image = [UIImage imageNamed:self.placeHolderImageName];
+        else if(self.placeHolderImage != nil)
+            self.image = self.placeHolderImage;
 			
 		
 		[self loadImageAtURL:_url];
@@ -320,6 +323,7 @@ NSString * const DTLazyImageViewDidFinishDownloadNotification = @"DTLazyImageVie
 @synthesize shouldShowProgressiveDownload;
 @synthesize url = _url;
 @synthesize placeHolderImageName = _placeHolderImageName;
+@synthesize placeHolderImage = _placeHolderImage;
 @synthesize urlRequest = _urlRequest;
 
 @end
